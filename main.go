@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/faiface/pixel/imdraw"
+
 	"github.com/faiface/pixel/text"
 	"golang.org/x/image/colornames"
 	"golang.org/x/image/font/basicfont"
@@ -47,15 +47,15 @@ func run() {
 	basicAtlas := text.NewAtlas(basicfont.Face7x13, text.ASCII)
 	basicTxt := text.New(pixel.V(200, 500), basicAtlas)
 
-	imd := imdraw.New(nil)
-	imd.Color = pixel.RGBA{1, 0, 0, 0.1}
-	imd.Push(pixel.V(200, 100))
-	imd.Color = pixel.RGB(0, 1, 0)
-	imd.Push(pixel.V(800, 100))
-	imd.Color = pixel.RGB(0, 0, 1)
-	imd.Push(pixel.V(500, 700))
-
-	imd.Polygon(0)
+	//imd := imdraw.New(nil)
+	//imd.Color = pixel.RGBA{1, 0, 0, 0.1}
+	//imd.Push(pixel.V(200, 100))
+	//imd.Color = pixel.RGB(0, 1, 0)
+	//imd.Push(pixel.V(800, 100))
+	//imd.Color = pixel.RGB(0, 0, 1)
+	//imd.Push(pixel.V(500, 700))
+	//
+	//imd.Polygon(0)
 
 	for !win.Closed() {
 		win.Clear(colornames.Whitesmoke)
@@ -90,7 +90,7 @@ func run() {
 			hero.MoveToNextGrid(0.1)
 			DrawHeroToMap(hero, win)
 		}
-		imd.Draw(win)
+
 		basicTxt.Draw(win, pixel.IM)
 		win.Update()
 	}
